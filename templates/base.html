@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="{{ config.extra.author }}" />
+
+    <link href="{{ get_url(path="main.css") }}" rel="stylesheet" />
+    <link href="{{ get_url(path="hack.css") }}" rel="stylesheet" />
+    <link href="{{ get_url(path="solarized-dark.css") }}" rel="stylesheet" />
+
+    <title>{% block title %}{% endblock title %}</title>
+  </head>
+  <body class="hack solarized-dark">
+    <header>
+      <p>
+        <a href="/">Caleb Bassi</a> - <a href="/blog">Blog</a>
+      </p>
+    </header>
+    <main>
+      {% block main %}{% endblock main %}
+    </main>
+  </body>
+</html>
