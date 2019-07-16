@@ -1,8 +1,0 @@
-base_url = "https://cjbassi.xyz"
-title = "Caleb Bassi"
-highlight_code = true
-generate_rss = true
-compile_sass = true
-
-[extra]
-author = "Caleb Bassi"
