@@ -660,10 +660,31 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
+"@polka/send@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@polka/send/-/send-0.4.0.tgz#e2771c5671d36175832534ab886a884f75f31e6f"
+  integrity sha1-4nccVnHTYXWDJTSriGqIT3XzHm8=
+
 "@polka/url@^0.5.0":
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/@polka/url/-/url-0.5.0.tgz#b21510597fd601e5d7c95008b76bf0d254ebfd31"
   integrity sha512-oZLYFEAzUKyi3SKnXvj32ZCEGH6RDnao7COuCVhDydMS9NrCSVXhM79VaKyP5+Zc33m0QXEd2DN3UkU7OsHcfw==
+
+"@sindresorhus/slugify@^0.9.1":
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/@sindresorhus/slugify/-/slugify-0.9.1.tgz#892ad24d70b442c0a14fe519cb4019d59bc5069f"
+  integrity sha512-b6heYM9dzZD13t2GOiEQTDE0qX+I1GyOotMwKh9VQqzuNiVdPVT8dM43fe9HNb/3ul+Qwd5oKSEDrDIfhq3bnQ==
+  dependencies:
+    escape-string-regexp "^1.0.5"
+    lodash.deburr "^4.1.0"
+
+"@sveltejs/site-kit@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@sveltejs/site-kit/-/site-kit-1.1.1.tgz#0359d03632bfc12b8ab672a306aaab1f2fac985d"
+  integrity sha512-EYQKhrdbRWeaPteTN1YZ4oW0xBbUzQ2D+XPdIfEvwDvgxAka9KZP5BCiENrXFf7Z9lxe2HW6MDlrT2sMwoS8+g==
+  dependencies:
+    "@sindresorhus/slugify" "^0.9.1"
+    golden-fleece "^1.0.9"
 
 "@types/estree@0.0.39":
   version "0.0.39"
@@ -790,6 +811,15 @@ clean-css@^4.2.1:
   dependencies:
     source-map "~0.6.0"
 
+clipboard@^2.0.0:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/clipboard/-/clipboard-2.0.4.tgz#836dafd66cf0fea5d71ce5d5b0bf6e958009112d"
+  integrity sha512-Vw26VSLRpJfBofiVaFb/I8PVfdI1OxKcYShe6fm0sP/DtmiWQNCjhM/okTvdCo0G+lMMm1rMYbk4IK4x1X+kgQ==
+  dependencies:
+    good-listener "^1.2.2"
+    select "^1.1.2"
+    tiny-emitter "^2.0.0"
+
 color-convert@^1.9.0:
   version "1.9.3"
   resolved "https://registry.yarnpkg.com/color-convert/-/color-convert-1.9.3.tgz#bb71850690e1f136567de629d2d5471deda4c1e8"
@@ -890,6 +920,11 @@ define-properties@^1.1.2:
   dependencies:
     object-keys "^1.0.12"
 
+delegate@^3.1.2:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/delegate/-/delegate-3.2.0.tgz#b66b71c3158522e8ab5744f720d8ca0c2af59166"
+  integrity sha512-IofjkYBZaZivn0V8nnsMJGBr4jVLxHDheKSW88PyxS5QC4Vo9ZbZVvhzlSxY87fVq3STR6r+4cGepyHkcWOQSw==
+
 electron-to-chromium@^1.3.191:
   version "1.3.191"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.191.tgz#c451b422cd8b2eab84dedabab5abcae1eaefb6f0"
@@ -947,6 +982,18 @@ globals@^11.1.0:
   version "11.12.0"
   resolved "https://registry.yarnpkg.com/globals/-/globals-11.12.0.tgz#ab8795338868a0babd8525758018c2a7eb95c42e"
   integrity sha512-WOBp/EEGUiIsJSp7wcv/y6MO+lV9UoncWqxuFfm8eBwzWNgyfBd6Gz+IeKQ9jCmyhoH99g15M3T+QaVHFjizVA==
+
+golden-fleece@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/golden-fleece/-/golden-fleece-1.0.9.tgz#0c4cbba8b493c8ab4cd4023404317a97785306f3"
+  integrity sha512-YSwLaGMOgSBx9roJlNLL12c+FRiw7VECphinc6mGucphc/ZxTHgdEz6gmJqH6NOzYEd/yr64hwjom5pZ+tJVpg==
+
+good-listener@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/good-listener/-/good-listener-1.2.2.tgz#d53b30cdf9313dffb7dc9a0d477096aa6d145c50"
+  integrity sha1-1TswzfkxPf+33JoNR3CWqm0UXFA=
+  dependencies:
+    delegate "^3.1.2"
 
 graceful-fs@^4.1.2:
   version "4.2.0"
@@ -1116,6 +1163,11 @@ load-json-file@^4.0.0:
     pify "^3.0.0"
     strip-bom "^3.0.0"
 
+lodash.deburr@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/lodash.deburr/-/lodash.deburr-4.1.0.tgz#ddb1bbb3ef07458c0177ba07de14422cb033ff9b"
+  integrity sha1-3bG7s+8HRYwBd7oH3hRCLLAz/5s=
+
 lodash@^4.17.11:
   version "4.17.14"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.14.tgz#9ce487ae66c96254fe20b599f21b6816028078ba"
@@ -1139,6 +1191,11 @@ magic-string@^0.25.2:
   integrity sha512-6QK0OpF/phMz0Q2AxILkX2mFhi7m+WMwTRg0LQKq/WBB0cDP4rYH3Wp4/d3OTXlrPLVJT/RFqj8tFeAR4nk8AA==
   dependencies:
     sourcemap-codec "^1.4.4"
+
+marked@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-0.7.0.tgz#b64201f051d271b1edc10a04d1ae9b74bb8e5c0e"
+  integrity sha512-c+yYdCZJQrsRjTPhUx7VKkApw9bwDkNbHUKo1ovgcfDjb2kc8rLuRbIFyXL5WOEUwzSSKo3IXpph2K6DqB/KZg==
 
 matchit@^1.0.0:
   version "1.0.8"
@@ -1316,6 +1373,13 @@ polka@^0.5.0:
   dependencies:
     "@polka/url" "^0.5.0"
     trouter "^2.0.1"
+
+prismjs@^1.16.0:
+  version "1.16.0"
+  resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.16.0.tgz#406eb2c8aacb0f5f0f1167930cb83835d10a4308"
+  integrity sha512-OA4MKxjFZHSvZcisLGe14THYsug/nF6O1f0pAJc0KN0wTyAcLqmsbE+lTGKSpyh+9pEW57+k6pg2AfYR+coyHA==
+  optionalDependencies:
+    clipboard "^2.0.0"
 
 private@^0.1.6:
   version "0.1.8"
@@ -1508,6 +1572,11 @@ sapper@^0.27.0:
     sourcemap-codec "^1.4.4"
     string-hash "^1.1.3"
 
+select@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/select/-/select-1.1.2.tgz#0e7350acdec80b1108528786ec1d4418d11b396d"
+  integrity sha1-DnNQrN7ICxEIUoeG7B1EGNEbOW0=
+
 "semver@2 || 3 || 4 || 5", semver@^5.3.0, semver@^5.4.1, semver@^5.5.0, semver@^5.5.1:
   version "5.7.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.7.0.tgz#790a7cf6fea5459bac96110b29b60412dc8ff96b"
@@ -1660,6 +1729,11 @@ terser@^3.14.1:
     commander "^2.19.0"
     source-map "~0.6.1"
     source-map-support "~0.5.10"
+
+tiny-emitter@^2.0.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/tiny-emitter/-/tiny-emitter-2.1.0.tgz#1d1a56edfc51c43e863cbb5382a72330e3555423"
+  integrity sha512-NB6Dk1A9xgQPMoGqC5CVXn123gWyte215ONT5Pp5a0yt4nlEoO1ZWeCwpncaekPHXO60i47ihFnZPiRPjRMq4Q==
 
 to-fast-properties@^2.0.0:
   version "2.0.0"
