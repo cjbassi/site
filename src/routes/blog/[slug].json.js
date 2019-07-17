@@ -1,12 +1,12 @@
 import send from '@polka/send';
-import get_posts from './_posts.js';
+import { get_pages } from '../../utils/markdown';
 
 let lookup;
 
 export function get(req, res) {
 	if (!lookup || process.env.NODE_ENV !== 'production') {
 		lookup = new Map();
-		get_posts().forEach(post => {
+		get_pages('blog').forEach(post => {
 			lookup.set(post.slug, post);
 		});
 	}

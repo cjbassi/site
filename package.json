@@ -10,7 +10,7 @@
     "update": "node scripts/update_template.js && node scripts/get-contributors.js",
     "start": "node __sapper__/build",
     "test": "mocha -r esm test/**",
-    "deploy": "make deploy"
+    "export": "sapper export"
   },
   "dependencies": {
     "@polka/redirect": "^1.0.0-next.0",

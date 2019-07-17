@@ -14,7 +14,7 @@
 </svelte:head>
 
 <h1>{post.metadata.title}</h1>
-<time>{post.metadata.pubdate}</time>
+<time>{post.metadata.date}</time>
 
 <div class='content'>
 	{@html post.html}

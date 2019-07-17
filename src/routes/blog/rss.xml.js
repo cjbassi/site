@@ -1,9 +1,9 @@
 import send from '@polka/send';
-import get_posts from '../blog/_posts.js';
+import { get_pages } from '../../utils/markdown';
 
 const months = ',Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec'.split(',');
 
-function formatPubdate(str) {
+function format_date(str) {
 	const [y, m, d] = str.split('-');
 	return `${d} ${months[+m]} ${y} 12:00 +0000`;
 }
@@ -21,12 +21,12 @@ const rss = `
 		<title>Svelte</title>
 		<link>https://svelte.dev/blog</link>
 	</image>
-	${get_posts().filter(post => !post.metadata.draft).map(post => `
+	${get_pages('blog').filter(post => !post.metadata.draft).map(post => `
 		<item>
 			<title>${post.metadata.title}</title>
 			<link>https://svelte.dev/blog/${post.slug}</link>
 			<description>${post.metadata.description}</description>
-			<pubDate>${formatPubdate(post.metadata.pubdate)}</pubDate>
+			<pubDate>${format_date(post.metadata.date)}</pubDate>
 		</item>
 	`).join('')}
 </channel>

@@ -1,25 +1,31 @@
 <script context="module">
 	export async function preload() {
 		const response = await this.fetch('blog.json');
-		const posts = await response.json();
-		return { posts };
+		const { posts, index } = await response.json();
+		return { posts, index };
 	}
 </script>
 
 <script>
 	export let posts;
+	export let index;
 </script>
 
 <svelte:head>
-	<title>Blog</title>
+	<title>{index.metadata.title} | Caleb Bassi</title>
+	<link rel="alternate" type="application/rss+xml" title="Caleb Bassi's blog" href="blog/rss.xml">
 </svelte:head>
 
-<h1>Recent posts</h1>
+<h1>{index.metadata.title}</h1>
+
+<div class='content'>
+	{@html index.html}
+</div>
 
 <ul>
 	{#each posts as post}
 		<li>
-			{post.metadata.pubdate} -
+			{post.metadata.date} -
 			<a rel="prefetch" href="blog/{post.slug}">{post.metadata.title}</a>
 		</li>
 	{/each}
