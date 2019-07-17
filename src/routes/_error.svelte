@@ -5,8 +5,7 @@
 </script>
 
 <style>
-	h1,
-	p {
+	h1, p {
 		margin: 0 auto;
 	}
 	h1 {

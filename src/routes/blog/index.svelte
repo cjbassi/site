@@ -7,13 +7,15 @@
 </script>
 
 <script>
+	import { BLOG_TITLE } from '../../../config';
+
 	export let posts;
 	export let index;
 </script>
 
 <svelte:head>
 	<title>{index.metadata.title}</title>
-	<link rel="alternate" type="application/rss+xml" title="Caleb Bassi's blog" href="blog/rss.xml">
+	<link rel="alternate" type="application/rss+xml" title="{BLOG_TITLE}" href="blog/rss.xml">
 </svelte:head>
 
 <div class='content'>

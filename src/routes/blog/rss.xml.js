@@ -1,5 +1,6 @@
 import send from '@polka/send';
 import { get_pages } from '../../utils/markdown';
+import { BASE_URL, BLOG_TITLE, BLOG_DESCRIPTION } from '../../../config';
 
 const months = ',Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec'.split(',');
 
@@ -13,18 +14,13 @@ const rss = `
 <rss version="2.0">
 
 <channel>
-	<title>Svelte blog</title>
-	<link>https://svelte.dev/blog</link>
-	<description>News and information about the magical disappearing UI framework</description>
-	<image>
-		<url>https://svelte.dev/favicon.png</url>
-		<title>Svelte</title>
-		<link>https://svelte.dev/blog</link>
-	</image>
+	<title>${BLOG_TITLE}</title>
+	<link>${BASE_URL}/blog</link>
+	<description>${BLOG_DESCRIPTION}</description>
 	${get_pages('blog').filter(post => !post.metadata.draft).map(post => `
 		<item>
 			<title>${post.metadata.title}</title>
-			<link>https://svelte.dev/blog/${post.slug}</link>
+			<link>${BASE_URL}/blog/${post.slug}</link>
 			<description>${post.metadata.description}</description>
 			<pubDate>${format_date(post.metadata.date)}</pubDate>
 		</item>
