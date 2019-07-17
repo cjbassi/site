@@ -2,6 +2,8 @@
 title: Caleb Bassi
 ---
 
+# Caleb Bassi
+
 ## Contact
 
 - Email: calebjbassi@gmail.com

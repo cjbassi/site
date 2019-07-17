@@ -15,8 +15,6 @@
 	<link rel="alternate" type="application/rss+xml" title="Caleb Bassi's blog" href="blog/rss.xml">
 </svelte:head>
 
-<h1>{index.metadata.title}</h1>
-
 <div class='content'>
 	{@html index.html}
 </div>
