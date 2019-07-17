@@ -1,28 +1,22 @@
-import posts from './_posts.js';
+import send from '@polka/send';
+import get_posts from './_posts.js';
 
-const lookup = new Map();
-posts.forEach(post => {
-	lookup.set(post.slug, JSON.stringify(post));
-});
+let lookup;
 
-export function get(req, res, next) {
-	const { slug } = req.params;
-
-	if (lookup.has(slug)) {
-		res.writeHead(200, {
-			'Content-Type': 'application/json'
+export function get(req, res) {
+	if (!lookup || process.env.NODE_ENV !== 'production') {
+		lookup = new Map();
+		get_posts().forEach(post => {
+			lookup.set(post.slug, post);
 		});
+	}
 
-		res.end(lookup.get(slug));
+	const post = lookup.get(req.params.slug);
+
+	if (post) {
+		res.setHeader('Cache-Control', `max-age=${5 * 60 * 1e3}`); // 5 minutes
+		send(res, 200, post);
 	} else {
-		res.writeHead(404, {
-			'Content-Type': 'application/json'
-		});
-
-		res.end(
-			JSON.stringify({
-				message: `Not found`
-			})
-		);
+		send(res, 404, { message: 'not found' });
 	}
 }

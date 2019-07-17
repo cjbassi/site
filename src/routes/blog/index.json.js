@@ -1,18 +1,24 @@
-import posts from './_posts.js';
+import send from '@polka/send';
+import get_posts from './_posts.js';
 
-const contents = JSON.stringify(
-	posts.map(post => {
-		return {
-			title: post.title,
-			slug: post.slug
-		};
-	})
-);
+let json;
 
 export function get(req, res) {
-	res.writeHead(200, {
-		'Content-Type': 'application/json'
-	});
+	if (!json || process.env.NODE_ENV !== 'production') {
+		const posts = get_posts()
+			.filter(post => !post.metadata.draft)
+			.map(post => {
+				return {
+					slug: post.slug,
+					metadata: post.metadata
+				};
+			});
 
-	res.end(contents);
+		json = JSON.stringify(posts);
+	}
+
+	send(res, 200, json, {
+		'Content-Type': 'application/json',
+		'Cache-Control': `max-age=${5 * 60 * 1e3}` // 5 minutes
+	});
 }

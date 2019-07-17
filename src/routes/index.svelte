@@ -1,10 +1,10 @@
 <script context="module">
-	export function preload({ params, query }) {
-		return this.fetch(`index.json`)
-			.then(r => console.log(r))
-			.then(index => {
-				return { index };
-			});
+	export async function preload({ params, query }) {
+		const response = await this.fetch('routes.json');
+		console.log(response);
+		const index = await response.json();
+		console.log(index);
+		return { index };
 	}
 </script>
 

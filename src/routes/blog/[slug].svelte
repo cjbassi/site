@@ -1,12 +1,12 @@
 <script context="module">
 	export async function preload({ params, query }) {
-		const res = await this.fetch(`blog/${params.slug}.json`);
-		const data = await res.json();
+		const response = await this.fetch(`blog/${params.slug}.json`);
+		console.log(await response.text());
 
-		if (res.status === 200) {
-			return { post: data };
+		if (response.ok) {
+			return { post: await response.json() };
 		} else {
-			this.error(res.status, data.message);
+			this.error(response.status, 'Not found');
 		}
 	}
 </script>
@@ -16,11 +16,11 @@
 </script>
 
 <svelte:head>
-	<title>{post.title}</title>
+	<title>{post.metadata.title}</title>
 </svelte:head>
 
-<h1>{post.title}</h1>
-<time>{post.date}</time>
+<h1>{post.metadata.title}</h1>
+<time>{post.metadata.date}</time>
 
 <div class='content'>
 	{@html post.html}

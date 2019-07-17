@@ -1,5 +1,5 @@
 ---
-title = "Caleb Bassi"
+title: Caleb Bassi
 ---
 
 ## Contact
