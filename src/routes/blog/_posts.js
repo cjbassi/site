@@ -12,15 +12,15 @@ const makeSlug = makeSlugProcessor(SLUG_PRESERVE_UNICODE);
 export default function get_posts() {
 	return fs
 		.readdirSync('content/blog')
-		.map(file => {
-			if (path.extname(file) !== '.md') return;
+		.map(filename => {
+			if (path.extname(filename) !== '.md') return;
 
-			const match = /^(\d+-\d+-\d+)-(.+)\.md$/.exec(file);
-			if (!match) throw new Error(`Invalid filename '${file}'`);
+			const match = /^(\d+-\d+-\d+)-(.+)\.md$/.exec(filename);
+			if (!match) throw new Error(`Invalid filename '${filename}'`);
 
 			const [, pubdate, slug] = match;
 
-			const markdown = fs.readFileSync(`content/blog/${file}`, 'utf-8');
+			const markdown = fs.readFileSync(`content/blog/${filename}`, 'utf-8');
 
 			const { content, metadata } = extract_frontmatter(markdown);
 
