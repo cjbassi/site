@@ -3,7 +3,6 @@ import path from 'path';
 import {
 	extract_frontmatter,
 	langs,
-	link_renderer
 } from '@sveltejs/site-kit/utils/markdown';
 import marked from 'marked';
 import { makeSlugProcessor } from './slug';
@@ -12,6 +11,16 @@ import PrismJS from 'prismjs';
 import 'prismjs/components/prism-bash';
 
 const makeSlug = makeSlugProcessor(SLUG_PRESERVE_UNICODE);
+
+function linkRenderer(href, title, text) {
+	let title_attr = '';
+
+	if (title !== null) {
+		title_attr = ` title="${title}"`;
+	}
+
+	return `<a href="${href}"${title_attr}>${text}</a>`;
+}
 
 export function getPages(directory) {
 	return fs
@@ -44,7 +53,7 @@ export function getPage(filepath) {
 
 	const renderer = new marked.Renderer();
 
-	renderer.link = link_renderer;
+	renderer.link = linkRenderer;
 
 	renderer.code = (source, lang) => {
 		const plang = langs[lang];
