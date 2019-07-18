@@ -24,24 +24,23 @@ export function getPages(directory) {
 }
 
 export function getPage(filepath) {
-	const filename = path.basename(filepath);
-	const stem = path.basename(filepath, '.md');
-	const directory = path.dirname(filepath);
+	const fileStem = path.basename(filepath, '.md');
+	const fileDir = path.dirname(filepath);
 
 	const markdown = fs.readFileSync(`content/${filepath}`, 'utf-8');
 
 	const { content, metadata } = extract_frontmatter(markdown);
 
 	let date, slug;
-	const match = /^(\d+-\d+-\d+)-(.+)\.md$/.exec(filename);
+	const match = /^(\d+-\d+-\d+)-(.+)$/.exec(fileStem);
 	if (match) {
 		[, date, slug] = match;
 		metadata.date = date;
 	} else {
-		slug = stem;
+		slug = fileStem;
 	}
 
-	const link = directory ? `${directory}/${slug}` : slug;
+	const link = fileDir ? `${fileDir}/${slug}` : slug;
 
 	const renderer = new marked.Renderer();
 
