@@ -3,7 +3,7 @@ import { SLUG_SEPARATOR } from '../../config';
 
 /* url-safe processor */
 
-export const urlsafeSlugProcessor = string =>
+export const urlsafeSlugProcessor = (string) =>
 	slugify(string, {
 		customReplacements: [	// runs before any other transformations
 			['$', 'DOLLAR'], // `$destroy` & co
@@ -23,7 +23,7 @@ const unicodeRegex = /\p{Letter}/u;
 const isNonAlphaNumUnicode =
 	string => !alphaNumRegex.test(string) && unicodeRegex.test(string);
 
-export const unicodeSafeProcessor = string =>
+export const unicodeSafeProcessor = (string) =>
 	string.split('')
 		.reduce((accum, char, index, array) => {
 			const type = isNonAlphaNumUnicode(char) ? 'pass' : 'process';

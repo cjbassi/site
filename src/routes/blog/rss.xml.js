@@ -1,5 +1,5 @@
 import send from '@polka/send';
-import { get_pages } from '../../utils/markdown';
+import { getPages } from '../../utils/markdown';
 import { BLOG_URL, BLOG_TITLE, BLOG_DESCRIPTION } from '../../../config';
 
 const months = ',Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec'.split(',');
@@ -17,7 +17,7 @@ const rss = `
 	<title>${BLOG_TITLE}</title>
 	<link>${BLOG_URL}</link>
 	<description>${BLOG_DESCRIPTION}</description>
-	${get_pages('blog').filter(post => !post.metadata.draft).map(post => `
+	${getPages('blog').filter(post => !post.metadata.draft).map(post => `
 		<item>
 			<title>${post.metadata.title}</title>
 			<link>${BLOG_URL}/${post.slug}</link>

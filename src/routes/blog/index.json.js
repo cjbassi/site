@@ -1,11 +1,11 @@
 import send from '@polka/send';
-import { get_pages, get_page } from '../../utils/markdown';
+import { getPages, getPage } from '../../utils/markdown';
 
 let json;
 
 export function get(req, res) {
 	if (!json || process.env.NODE_ENV !== 'production') {
-		const posts = get_pages('blog')
+		const posts = getPages('blog')
 			.filter(post => !post.metadata.draft)
 			.map(post => {
 				return {
@@ -16,7 +16,7 @@ export function get(req, res) {
 
 		json = {
 			posts,
-			index: get_page('blog/index.md'),
+			index: getPage('blog/index.md'),
 		};
 	}
 

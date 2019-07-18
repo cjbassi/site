@@ -13,17 +13,17 @@ import 'prismjs/components/prism-bash';
 
 const makeSlug = makeSlugProcessor(SLUG_PRESERVE_UNICODE);
 
-export function get_pages(directory) {
+export function getPages(directory) {
 	return fs
 		.readdirSync(`content/${directory}`)
 		.filter(filename => {
 			return filename !== 'index.md' && path.extname(filename) === '.md';
 		})
-		.map(filename => get_page(`${directory}/${filename}`))
+		.map(filename => getPage(`${directory}/${filename}`))
 		.sort((a, b) => (a.metadata.pubdate < b.metadata.pubdate ? 1 : -1));
 }
 
-export function get_page(filepath) {
+export function getPage(filepath) {
 	const filename = path.basename(filepath);
 	const stem = path.basename(filepath, '.md');
 	const directory = path.dirname(filepath);
