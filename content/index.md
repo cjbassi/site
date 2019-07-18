@@ -18,3 +18,8 @@ title: Caleb Bassi
 - [AUR](https://aur.archlinux.org/account/cjbassi)
 - [Stack Overflow](https://stackoverflow.com/users/7829659/caleb-bassi)
 - [reddit](https://www.reddit.com/user/cjbassi/)
+
+## Projects
+
+- [gotop](https://github.com/cjbassi/gotop)
+- [This website](https://github.com/cjbassi/site)
