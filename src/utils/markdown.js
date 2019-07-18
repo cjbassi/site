@@ -20,7 +20,7 @@ export function getPages(directory) {
 			return filename !== 'index.md' && path.extname(filename) === '.md';
 		})
 		.map(filename => getPage(`${directory}/${filename}`))
-		.sort((a, b) => (a.metadata.pubdate < b.metadata.pubdate ? 1 : -1));
+		.sort((a, b) => (a.metadata.date < b.metadata.date ? 1 : -1));
 }
 
 export function getPage(filepath) {
