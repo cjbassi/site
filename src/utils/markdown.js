@@ -4,7 +4,7 @@ import {
 	extract_frontmatter,
 	langs,
 	link_renderer
-} from '@sveltejs/site-kit/utils/markdown.js';
+} from '@sveltejs/site-kit/utils/markdown';
 import marked from 'marked';
 import { makeSlugProcessor } from './slug';
 import { SLUG_PRESERVE_UNICODE } from '../../config';
