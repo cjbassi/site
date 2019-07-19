@@ -4,10 +4,7 @@ title: Caleb Bassi
 
 # Caleb Bassi
 
-## Contact
-
-- Email: calebjbassi@gmail.com
-- Matrix: [@cjbassi:matrix.org](https://matrix.to/#/@cjbassi:matrix.org)
+> CompSci undergrad at UC Santa Cruz and open source enthusiast
 
 ## Links
 
@@ -21,5 +18,17 @@ title: Caleb Bassi
 
 ## Projects
 
-- [gotop](https://github.com/cjbassi/gotop)
-- [This website](https://github.com/cjbassi/site)
+- [gotop](https://github.com/cjbassi/gotop) - A TUI resource monitor written in Go
+- [This website](https://github.com/cjbassi/site) - Built with [Svelte](https://github.com/sveltejs/svelte)/[Sapper](https://github.com/sveltejs/sapper) and styled with [HackCSS](https://github.com/egoist/hack)
+
+## Favorite programming domains
+
+- Rust
+- Linux desktop
+- Federation
+- [Svelte](https://github.com/sveltejs/svelte)/[Sapper](https://github.com/sveltejs/sapper)
+
+## Contact
+
+- Email: calebjbassi@gmail.com
+- Matrix: [@cjbassi:matrix.org](https://matrix.to/#/@cjbassi:matrix.org)

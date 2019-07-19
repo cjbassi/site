@@ -16,7 +16,7 @@ export function get(req, res) {
 
 		json = {
 			posts,
-			index: getPage('blog/index.md'),
+			index: getPage('blog.md'),
 		};
 	}
 

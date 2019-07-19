@@ -55,6 +55,10 @@ export function getPage(filepath) {
 
 	renderer.link = linkRenderer;
 
+	renderer.paragraph = (text) => {
+		return text;
+	}
+
 	renderer.code = (source, lang) => {
 		const plang = langs[lang];
 		const highlighted = PrismJS.highlight(
