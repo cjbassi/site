@@ -23,10 +23,13 @@ title: Caleb Bassi
 
 ## Favorite programming domains
 
-- Rust
-- Linux desktop
-- Federation
-- [Svelte](https://github.com/sveltejs/svelte)/[Sapper](https://github.com/sveltejs/sapper)
+- Languages/Frameworks
+	- Rust
+	- TypeScript
+	- [Svelte](https://github.com/sveltejs/svelte)/[Sapper](https://github.com/sveltejs/sapper)
+- Platforms
+	- Linux desktop
+	- Federation
 
 ## Contact
 
