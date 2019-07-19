@@ -7,10 +7,10 @@
 		%sapper.base%
 
 		<!-- <link href="prism.css" rel="stylesheet" /> -->
-		<link rel="stylesheet" href="hack.css" />
-		<link rel="stylesheet" href="main.css" />
-		<link rel="stylesheet" href="solarized.css" />
-		<link rel="stylesheet" href="colorscheme.css" />
+		<link rel="stylesheet" href="css/hack.css" />
+		<link rel="stylesheet" href="css/main.css" />
+		<link rel="stylesheet" href="css/solarized.css" />
+		<link rel="stylesheet" href="css/colorscheme.css" />
 
 		%sapper.styles%
 
@@ -19,11 +19,16 @@
 	<body class="hack">
 		<script>
 			// https://davidwalsh.name/prefers-color-scheme
-			const prefers_color_scheme = getComputedStyle(document.documentElement).getPropertyValue('content').replace(/"/g, '');
-			if (prefers_color_scheme === "light") {
-				document.body.classList.add('solarized-light');
+			let colorscheme = localStorage.getItem("colorscheme");
+			if (!colorscheme) {
+				colorscheme = getComputedStyle(document.documentElement)
+					.getPropertyValue("content")
+					.replace(/"/g, "");
+			}
+			if (colorscheme === "light") {
+				document.body.classList.add("solarized-light");
 			} else {
-				document.body.classList.add('solarized-dark');
+				document.body.classList.add("solarized-dark");
 			}
 		</script>
 
