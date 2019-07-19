@@ -48,7 +48,7 @@
 		-
 		<a rel="prefetch" href="blog">Blog</a>
 		|
-		<a href="." on:click={toggleColorscheme}>
+		<a href="javascript:void(0)" on:click={toggleColorscheme}>
 			{capitalize(oppositeColorscheme(colorscheme))} mode
 		</a>
 	</p>
