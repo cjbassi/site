@@ -9,7 +9,6 @@
 		<!-- <link href="prism.css" rel="stylesheet" /> -->
 		<link rel="stylesheet" href="css/hack.css" />
 		<link rel="stylesheet" href="css/solarized.css" />
-		<link rel="stylesheet" href="css/colorscheme.css" />
 		<link rel="stylesheet" href="css/main.css" />
 
 		%sapper.styles%
@@ -18,14 +17,16 @@
 	</head>
 	<body class="hack">
 		<script>
-			// https://davidwalsh.name/prefers-color-scheme
-			let colorscheme = localStorage.getItem("colorscheme");
-			if (!colorscheme) {
-				colorscheme = getComputedStyle(document.documentElement)
-					.getPropertyValue("content")
-					.replace(/"/g, "");
+			let colorScheme = localStorage.getItem("color-scheme");
+			if (!colorScheme) {
+				// https://jross.me/updating-your-website-favicon-dynamically-with-dark-mode/
+				if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+					colorScheme = "light";
+				} else {
+					colorScheme = "dark";
+				}
 			}
-			if (colorscheme === "light") {
+			if (colorScheme === "light") {
 				document.body.classList.add("solarized-light");
 			} else {
 				document.body.classList.add("solarized-dark");
