@@ -1,12 +1,12 @@
 import send from '@polka/send';
-import { getPages, getPage } from '../../utils/markdown';
+import { getPages, getPage, filterDraft } from '../../utils/markdown';
 
 let json;
 
 export function get(req, res) {
 	if (!json || process.env.NODE_ENV !== 'production') {
 		const posts = getPages('blog')
-			.filter(post => !post.metadata.draft)
+			.filter(filterDraft)
 			.map(post => {
 				return {
 					slug: post.slug,

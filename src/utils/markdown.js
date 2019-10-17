@@ -22,6 +22,10 @@ function linkRenderer(href, title, text) {
 	return `<a href="${href}"${title_attr}>${text}</a>`;
 }
 
+export function filterDraft(post) {
+	return !post.metadata.draft || post.metadata.draft === "false";
+}
+
 export function getPages(directory) {
 	return fs
 		.readdirSync(`content/${directory}`)
