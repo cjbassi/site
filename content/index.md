@@ -13,3 +13,8 @@ title: Caleb Bassi
 
 - Email: calebjbassi@gmail.com
 - Matrix: [@cjbassi:matrix.org](https://matrix.to/#/@cjbassi:matrix.org)
+
+## Donations
+
+- One time: https://paypal.me/cjbassi
+- Reoccurring: https://liberapay.com/cjbassi
