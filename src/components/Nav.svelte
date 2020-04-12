@@ -51,5 +51,9 @@
 		<a href="javascript:void(0)" on:click={toggleColorScheme}>
 			{capitalize(oppositeColorScheme(colorScheme))} mode
 		</a>
+		-
+		<a href="https://github.com/cjbassi/site">
+			Source code
+		</a>
 	</p>
 </nav>
