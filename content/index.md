@@ -16,5 +16,4 @@ title: Caleb Bassi
 
 ## Donations
 
-- One time: https://paypal.me/cjbassi
-- Reoccurring: https://liberapay.com/cjbassi
+- PayPal: https://paypal.me/cjbassi
